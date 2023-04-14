@@ -6,7 +6,7 @@ export default function Appshell({ children }) {
   return (
     <>
       <Navbar />
-      <main>{children}</main>
+      <main className="px-16 my-16">{children}</main>
       <Footer />
     </>
   );
