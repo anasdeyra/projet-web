@@ -1,16 +1,18 @@
 [
     {
-        "date" :"15-04-2023",
+        "date" :"a month ago",
+        "auteur" :"anas",
         "isLiked" :true,
         "title" :"Top 20 hits of 2023",
-        "article" :"dqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqsdqsd qsdq sdqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqs dqsdq sdqsdqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqsdqsdqsdqs",
+        "article" :"This is the first solo number-one single for Jimin, formerly of the boy band BTS. This also makes him the first solo South Korean artist to achieve s chart-topper on the Billboard Hot 100.",
         "likes" :50
     },
     {
-        "date" :"15-04-2023",
+        "date" :"a year ago",
+        "auteur" :"hama",
         "isLiked" :false,
         "title" :"top 20 artits of 2023",
-        "article" :"dqsdqsdqsdqdqsdqsdqsdqs",
+        "article" :"This is the first solo number-one single for Jimin, formerly of the boy band BTS. This also makes him the first solo South Korean artist to achieve s chart-topper on the Billboard Hot 100.",
         "likes" :60
     }
 ]
