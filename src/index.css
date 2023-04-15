@@ -8,4 +8,19 @@
   html {
     font-family: "Poppins", sans-serif;
   }
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(-25%);
+      animation-timing-function: ease-in-out;
+    }
+    50% {
+      transform: none;
+      animation-timing-function: ease-in-out;
+    }
+  }
+  .bounce {
+    animation: bounce 4s infinite;
+  }
 }
