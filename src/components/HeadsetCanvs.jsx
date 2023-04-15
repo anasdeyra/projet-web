@@ -10,7 +10,7 @@ const HeadsetCanvs = () => {
       camera={{ position: [300, -210, 10], fov: 2 }}
       gl={{ preserveDrawingBuffer: true }}
     >
-      <Suspense fallback={<div color="white">Loading</div>}>
+      <Suspense fallback={<div style={{color :"white"}}>Loading</div>}>
         <OrbitControls
           enableZoom={false}
           minPolarAngle={(2 * Math.PI) / 3} // Restrict polar angle to between 60 and 120 degrees
