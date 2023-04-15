@@ -26,7 +26,7 @@ export default function Navbar() {
             <Navlink {...props} key={i} />
           ))}
         </ul>
-        <button className="bg-green-500 text-sm px-5 py-2 rounded-md transition-all active:scale-[0.98]">
+        <button className="bg-gradient-to-bl from-emerald-700 to-green-500 text-sm px-5 py-2 rounded-md transition-all active:scale-[0.98]">
           Sign in
         </button>
       </div>
