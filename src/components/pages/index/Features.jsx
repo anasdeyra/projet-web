@@ -25,12 +25,15 @@ export default function Features() {
 
 function FeaturesCard({ feature, description, Icon }) {
   return (
-    <div className="flex flex-col items-start bg-neutral-900 p-4 rounded-lg">
-      <div className="bg-gradient-to-bl from-emerald-700 to-green-500 p-2 rounded-md">
-        <Icon size={24} />
+    <div className="flex rounded-lg overflow-hidden">
+      <span className="w-full max-w-[4px] bg-gradient-to-b from-emerald-700 to-green-500" />
+      <div className="flex flex-col items-start bg-neutral-900 p-4 ">
+        <div className="bg-gradient-to-bl from-emerald-700 to-green-500 p-2 rounded-md">
+          <Icon size={24} />
+        </div>
+        <h3 className="mt-4 font-semibold text-lg">{feature}</h3>
+        <p className="mt-2 text-neutral-200 font-medium">{description}</p>
       </div>
-      <h3 className="mt-4 font-semibold text-lg">{feature}</h3>
-      <p className="mt-2 text-neutral-200 font-medium">{description}</p>
     </div>
   );
 }
