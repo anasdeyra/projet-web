@@ -1,0 +1,16 @@
+[
+    {
+        "date" :"15-04-2023",
+        "isLiked" :true,
+        "title" :"Top 20 hits of 2023",
+        "article" :"dqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqsdqsd qsdq sdqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqs dqsdq sdqsdqsdqsdqsdqdqsdqsdqsdqsdqsdqsdqsdqdqsdqsdqsdqs",
+        "likes" :50
+    },
+    {
+        "date" :"15-04-2023",
+        "isLiked" :false,
+        "title" :"top 20 artits of 2023",
+        "article" :"dqsdqsdqsdqdqsdqsdqsdqs",
+        "likes" :60
+    }
+]
