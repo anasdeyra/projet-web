@@ -17,7 +17,7 @@ const LINKS = [
 export default function Navbar() {
   return (
     <header className="border-b border-b-neutral-700 px-16 py-6 flex justify-between items-center">
-      <a href={"/"} className="font-bold text-2xl">
+      <a href={"/"} className="font-bold text-2xl ">
         Spotify
       </a>
       <div className="flex gap-16 items-center">
@@ -36,7 +36,7 @@ export default function Navbar() {
 
 function Navlink({ href, label }) {
   return (
-    <a className="hover:text-green-500" href={href}>
+    <a className="hover:text-emerald-500" href={href}>
       <li>{label}</li>
     </a>
   );

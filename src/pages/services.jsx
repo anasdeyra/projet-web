@@ -20,7 +20,7 @@ export default function Services() {
 function Card({ title, description, features, price, isPrimary = false }) {
   return (
     <div className="border border-neutral-700 p-4 rounded-xl flex flex-col">
-      <h3 className="font-semibold text-3xl">{title}</h3>
+      <h3 className="font-semibold text-3xl mt-6">{title}</h3>
       <h4 className=" text-lg mt-1 text-neutral-300 mx-1">{description}</h4>
       <h4 className="font-bold text-4xl mt-4 ">
         ${price}{" "}
@@ -29,15 +29,17 @@ function Card({ title, description, features, price, isPrimary = false }) {
       <div className="flex flex-col gap-3 mt-6 mb-8 text-start">
         {features.map((feature, i) => (
           <span className="flex gap-2 items-center" key={i}>
-            <FiCheck size={20} className="text-green-500" />
+            <FiCheck size={20} className="text-emerald-500" />
             {feature}
           </span>
         ))}
       </div>
       <button
         className={`${
-          isPrimary ? "bg-green-500" : "bg-white text-neutral-950"
-        } py-3 w-full rounded-lg font-semibold mt-auto`}
+          isPrimary
+            ? "bg-gradient-to-l from-emerald-700 to-green-500"
+            : "bg-white text-neutral-950"
+        } py-3 w-full rounded-lg font-semibold mt-auto transition-all active:scale-[0.98]`}
       >
         Get started
       </button>
