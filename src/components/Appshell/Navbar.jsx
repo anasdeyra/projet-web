@@ -16,7 +16,7 @@ const LINKS = [
 
 export default function Navbar() {
   return (
-    <header className=" border-b border-b-neutral-700 px-16 py-6 ">
+    <header className=" border-b border-b-neutral-700 px-16 py-6 z-50">
       <div className="flex justify-between items-center max-w-[1366px] mx-auto">
         <a href={"/"} className="font-bold text-2xl ">
           Spotify
