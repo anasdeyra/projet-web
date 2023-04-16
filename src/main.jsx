@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Appshell from "./components/Appshell/Appshell";
 import Services from "./pages/services";
 import { Blog } from "./pages/Blog";
+import AboutUs from "./pages/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path : "/blog",
     element : <Blog/>
+  },
+  {
+    path :"/about-us",
+    element :<AboutUs/>
   }
 ]);
 

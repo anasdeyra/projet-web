@@ -14,7 +14,7 @@ export const Blog = () => {
   )
 } 
 
-const Article = ({title  , article , likes , date , isLiked , auteur}) => {
+const Article = ({title  , article ,  date , isLiked , auteur}) => {
   return (
     <div className='bg-neutral-900  max-w-[320px]  text-white text-bold    cursor-pointer rounded-xl transition-all active:scale-[0.99]  '>
         <img className='rounded-lg' alt='article image' src='https://www.impactplus.com/hs-fs/hubfs/blog-files/blog%20layout%20best%20practices.jpg?length=1200&name=blog%20layout%20best%20practices.jpg'  />
