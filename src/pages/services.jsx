@@ -39,7 +39,7 @@ function Card({ title, description, features, price, isPrimary = false }) {
           isPrimary
             ? "bg-gradient-to-l from-emerald-700 to-green-500"
             : "bg-white text-neutral-950"
-        } py-3 w-full rounded-lg font-semibold mt-auto transition-all active:scale-[0.98]`}
+        } py-3 w-full rounded-lg font-semibold mt-auto transition-all active:scale-[0.99]`}
       >
         Get started
       </button>
