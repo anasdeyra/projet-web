@@ -1,5 +1,4 @@
 [
-
   {
     "date": "a month ago",
     "auteur": "anas",
@@ -26,24 +25,22 @@
     "article": "This is the first solo number-one single for Jimin, formerly of the boy band BTS. This also makes him the first solo South Korean artist to achieve s chart-topper on the Billboard Hot 100.",
     "likes": 50,
     "image": "https://hips.hearstapps.com/hmg-prod/images/best-songs-2023-1675984480.png?crop=1.00xw:0.502xh;0,0.242xh&resize=1200:*"
-  }
-]
+  },
 
-    {
-        "date" :"a month ago",
-        "likes" : 60,
-        "auteur" :"anas",
-        "isLiked" :true,
-        "title" :"Top 20 hits of 2023",
-        "article" :"This is the first solo number-one single for Jimin, formerly of the boy band BTS. This also makes him the first solo South Korean artist to achieve s chart-topper on the Billboard Hot 100."
-    },
-    {
-        "date" :"a year ago",
-        "auteur" :"hama",
-        "isLiked" :false,
-        "likes" : 70,
-        "title" :"top 20 artits of 2023",
-        "article" :"This is the first solo number-one single for Jimin, formerly of the boy band BTS. This also makes him the first solo South Korean artist to achieve s chart-topper on the Billboard Hot 100."
-        
-    }
+  {
+    "date": "a month ago",
+    "likes": 60,
+    "auteur": "anas",
+    "isLiked": true,
+    "title": "Top 20 hits of 2023",
+    "article": "This is the first solo number-one single for Jimin, formerly of the boy band BTS. This also makes him the first solo South Korean artist to achieve s chart-topper on the Billboard Hot 100."
+  },
+  {
+    "date": "a year ago",
+    "auteur": "hama",
+    "isLiked": false,
+    "likes": 70,
+    "title": "top 20 artits of 2023",
+    "article": "This is the first solo number-one single for Jimin, formerly of the boy band BTS. This also makes him the first solo South Korean artist to achieve s chart-topper on the Billboard Hot 100."
+  }
 ]
