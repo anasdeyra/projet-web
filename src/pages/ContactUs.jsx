@@ -10,7 +10,7 @@ export default function ContactUs() {
   const [agreed, setAgreed] = useState(false);
 
   return (
-    <div className="isolate px-6 mt-24 lg:px-8">
+    <div className="isolate px-6 my-24 lg:px-8">
       <div
         className="absolute inset-x-0 -z-10 transform-gpu  blur-3xl top-32 right-0"
         aria-hidden="true"

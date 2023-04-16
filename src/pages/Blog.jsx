@@ -38,7 +38,10 @@ const Article = ({ title, article, date, isLiked, auteur, image }) => {
       </h5>
       <div className="flex text-sm px-4 my-4 mt-6 justify-between items-center">
         <div className="flex items-center gap-x-2">
-          <img className=" rounded-3xl" src="https://i.pravatar.cc/30" />
+          <img
+            className=" rounded-full w-8 h-8 object-cover"
+            src="/team/anas.jpg"
+          />
           <h5 className="text-sm font-medium first-letter:uppercase">
             {auteur}
           </h5>

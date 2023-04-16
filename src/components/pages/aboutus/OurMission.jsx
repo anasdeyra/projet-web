@@ -46,7 +46,7 @@ const OurMission = () => {
       </div>
       <img
         className=" object-cover mt-20 rounded-2xl h-[512px] w-full"
-        src="https://images.pexels.com/photos/1756665/pexels-photo-1756665.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        src="/about-us-1.jpg"
       />
       <OurValues />
       <OurTeam />
@@ -70,8 +70,8 @@ const Statistic = () => {
 };
 
 const STATS = [
-  { label: "Users", value: "1M", Icon: FiUsers },
+  { label: "Users", value: "1.8M", Icon: FiUsers },
   { label: "Downloads", value: "1.3M", Icon: FiDownloadCloud },
-  { label: "Earnings", value: "11M", Icon: FiDollarSign },
-  { label: "Monthly Listeners", value: "1M", Icon: FiHeadphones },
+  { label: "Earnings", value: "114M", Icon: FiDollarSign },
+  { label: "Monthly Listeners", value: "1.3M", Icon: FiHeadphones },
 ];
