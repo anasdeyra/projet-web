@@ -14,7 +14,7 @@ export default function Features() {
         Discover What Sets Us Apart
       </h2>
 
-      <div className="grid md:grid-cols-3 mt-24 gap-4 max-w-7xl mx-auto">
+      <div className="grid md:grid-cols-3 mt-16 gap-4 max-w-7xl mx-auto">
         {FEATURES.map((props, i) => (
           <FeaturesCard key={i} {...props} />
         ))}

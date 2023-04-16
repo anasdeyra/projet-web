@@ -5,12 +5,16 @@ import { useState } from "react";
 
 export const Blog = () => {
   return (
-    <div className="w-full ">
-      <h1 className="text-center font-sans  text-5xl  font-bold">Blog</h1>
-      <div className="flex gap-x-5 mt-20 flex-wrap">
+    <div className="mt-24 text-center">
+      <h1 className="text-5xl font-bold">Tune In: Spotify Blog</h1>
+      <h2 className="text-2xl mt-4  mx-auto font-medium">
+        From Indie to Mainstream, Discover the Latest Music Trends and Get
+        Exclusive Insights into the Industry with Spotify Blog
+      </h2>
+      <div className="flex gap-x-5 mt-20 flex-wrap justify-center">
         {data.map((props, i) => (
           <Article {...props} key={i} />
-        ))}
+        ))}{" "}
       </div>
     </div>
   );
@@ -20,7 +24,7 @@ const Article = ({ title, article, date, isLiked, auteur, image }) => {
   const [liked, setLiked] = useState(isLiked);
 
   return (
-    <div className="bg-neutral-900  max-w-[320px]  text-white text-bold rounded-xl  ">
+    <div className="bg-neutral-900 text-start max-w-[320px]  text-white text-bold rounded-xl  ">
       <img
         className="rounded-lg cursor-pointer hover:scale-105 transition-all object-cover h-52 w-full"
         alt="article image"
