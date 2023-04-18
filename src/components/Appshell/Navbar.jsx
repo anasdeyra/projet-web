@@ -1,5 +1,9 @@
 const LINKS = [
   {
+    href: "/",
+    label: "Home",
+  },
+  {
     href: "/services",
     label: "Services",
   },
@@ -37,8 +41,14 @@ export default function Navbar() {
 }
 
 function Navlink({ href, label }) {
+  const isBold = window.location.pathname === href;
   return (
-    <a className="hover:text-emerald-500" href={href}>
+    <a
+      className={` ${
+        isBold ? "font-medium" : "text-neutral-100 hover:text-emerald-500"
+      }`}
+      href={href}
+    >
       <li>{label}</li>
     </a>
   );
