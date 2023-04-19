@@ -24,3 +24,47 @@
     animation: bounce 4s infinite;
   }
 }
+html,
+body {
+  scroll-behavior: smooth;
+}
+.slider {
+  height: 0.2rem;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove default styling */
+  appearance: none;
+  width: 0.4rem; /* Set width */
+  height: 0.9rem; /* Set height */
+  border-radius: 50%; /* Make thumb circular */
+  background: #10b981; /* Set thumb color */
+  cursor: pointer; /* Add cursor on hover */
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 3px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border: 25px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #ffffff;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+  border: 0px none #ffffff;
+  border-radius: 51px;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}

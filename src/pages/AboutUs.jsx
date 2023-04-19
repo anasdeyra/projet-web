@@ -1,9 +1,12 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import about1 from "../assets/about1.jpg";
 import OurMission from "../components/pages/aboutus/OurMission";
 const AboutUs = () => {
+  useEffect(()=>{
+    document.title ="About us"
+  },[])
   return (
-    <div>
+    <div className="mt-12">
       <h1 className="text-center text-4xl font-bold"> About US </h1>
       <div className="flex gap-x-8 mt-[5rem]">
         <div className="flex-1 relative mt-[4rem] text-[40px] ">

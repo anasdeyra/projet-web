@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React ,{ useState , useEffect  }  from "react";
 import { FiChevronDown as ChevronDownIcon } from "react-icons/fi";
 import { Switch } from "@headlessui/react";
 
@@ -8,7 +8,9 @@ function classNames(...classes) {
 
 export default function ContactUs() {
   const [agreed, setAgreed] = useState(false);
-
+  useEffect(()=>{
+    document.title ="Contact us"
+  },[])
   return (
     <div className="isolate px-6 my-24 lg:px-8">
       <div
@@ -151,7 +153,7 @@ export default function ContactUs() {
                 name="message"
                 id="message"
                 rows={4}
-                className="bg-neutral-900 block w-full rounded-md border-0 px-3.5 py-2 text-neutral-100 shadow-sm ring-1 ring-inset ring-neutral-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm sm:leading-6"
+                className="bg-neutral-900 min-h-[15rem] max-h-[28rem] block w-full rounded-md border-0 px-3.5 py-2 text-neutral-100 shadow-sm ring-1 ring-inset ring-neutral-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm sm:leading-6"
                 defaultValue={""}
               />
             </div>

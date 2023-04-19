@@ -29,21 +29,4 @@
   }
 ]
 
-    {
-        "date" :"a month ago",
-        "likes" : 60,
-        "auteur" :"anas",
-        "isLiked" :true,
-        "title" :"Top 20 hits of 2023",
-        "article" :"This is the first solo number-one single for Jimin, formerly of the boy band BTS. This also makes him the first solo South Korean artist to achieve s chart-topper on the Billboard Hot 100."
-    },
-    {
-        "date" :"a year ago",
-        "auteur" :"hama",
-        "isLiked" :false,
-        "likes" : 70,
-        "title" :"top 20 artits of 2023",
-        "article" :"This is the first solo number-one single for Jimin, formerly of the boy band BTS. This also makes him the first solo South Korean artist to achieve s chart-topper on the Billboard Hot 100."
-        
-    }
-]
+    
