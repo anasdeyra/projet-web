@@ -1,18 +1,9 @@
-import { useEffect } from "react";
 import { FiFacebook, FiInstagram, FiYoutube, FiTwitter } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
- useEffect(()=>{
-      let footer = document.getElementById('footer');
-      if (window.location.pathname.startsWith('/app')) {
-        footer.classList.add('hidden');
-      } else {
-       footer.classList.remove('hidden');
-      }
-    },[])
   return (
-    <div id="footer" className=" footer mx-auto max-w-[1366px] mt-[5rem]">
+    <div className="mx-auto max-w-[1366px]">
       <div className="mx-16 px-8 rounded-xl bg-neutral-900 py-8 mb-12">
         <div className="flex gap-24 justify-between">
           <div className="max-w-md">

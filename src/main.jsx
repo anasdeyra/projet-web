@@ -15,8 +15,6 @@ import { Blog } from "./pages/Blog";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import BlogPage from "./components/pages/BlogPage";
-import App from "./pages/App";
-import Search from "./pages/Search";
 
 const ROUTES = [
   {
@@ -42,14 +40,6 @@ const ROUTES = [
   {
     path: "/contact-us",
     element: <ContactUs />,
-  },
-  {
-    path: "/app",
-    element: <App />,
-  },
-  {
-    path: "/app/search",
-    element: <Search />,
   },
 ];
 
