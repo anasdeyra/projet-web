@@ -1,6 +1,9 @@
 import { FiCheck } from "react-icons/fi";
-
+import { useEffect } from "react";
 export default function Services() {
+  useEffect(()=>{
+    document.title ="Services"
+  },[])
   return (
     <div className="text-center mt-24">
       <h1 className="text-5xl font-bold">The Ultimate Listening Experience</h1>

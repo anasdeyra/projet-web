@@ -1,9 +1,12 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import data from "../data.json";
 import { FiHeart, FiSave, FiShare2 } from "react-icons/fi";
 import { useState } from "react";
 
 export const Blog = () => {
+  useEffect(()=>{
+    document.title ="Blog"
+  },[])
   return (
     <div className="mt-24 text-center">
       <h1 className="text-5xl font-bold">Tune In: Spotify Blog</h1>
