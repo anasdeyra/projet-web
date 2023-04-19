@@ -7,7 +7,7 @@ export default function Services() {
   return (
     <div className="text-center mt-24">
       <h1 className="text-5xl font-bold">The Ultimate Listening Experience</h1>
-      <h2 className="text-2xl mt-4 max-w-3xl mx-auto font-medium">
+      <h2 className="text-2xl mt-4 max-w-3xl mx-auto font-medium text-neutral-100">
         Treat yourself to the ultimate music listening experience with our
         premium plans at unbeatable prices.
       </h2>
