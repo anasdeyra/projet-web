@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import about1 from "../assets/about1.jpg";
 import OurMission from "../components/pages/aboutus/OurMission";
 const AboutUs = () => {
+  useEffect(() => {
+    document.title = "About us";
+  }, []);
   return (
     <div className="mt-24">
       <div className="flex gap-x-8 mt-[5rem]">
