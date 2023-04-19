@@ -23,4 +23,11 @@
   .bounce {
     animation: bounce 4s infinite;
   }
+
+  .blog-body > h2 {
+    @apply text-3xl font-bold mb-4 mt-10 text-white;
+  }
+  .blog-body > p {
+    @apply font-medium my-4;
+  }
 }

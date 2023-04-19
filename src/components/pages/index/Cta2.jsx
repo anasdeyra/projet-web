@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Cta2() {
@@ -10,12 +9,12 @@ export default function Cta2() {
           We value your feedback and are always happy to hear from our users
         </h3>
       </div>
-      <a
-        href={"/contact-us"}
+      <Link
+        to={"/contact-us"}
         className="bg-white text-neutral-800 rounded-lg px-4 py-3 font-semibold transition-all active:scale-[0.98]"
       >
         Contact Us
-      </a>
+      </Link>
       <img
         src="/cta2.png"
         alt="cta"

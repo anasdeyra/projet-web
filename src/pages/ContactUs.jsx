@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FiChevronDown as ChevronDownIcon } from "react-icons/fi";
 import { Switch } from "@headlessui/react";
+import { Link } from "react-router-dom";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -178,9 +179,9 @@ export default function ContactUs() {
             </div>
             <Switch.Label className="text-sm leading-6 text-neutral-400">
               By selecting this, you agree to our{" "}
-              <a href="#" className="font-semibold text-emerald-600">
+              <Link to="#" className="font-semibold text-emerald-600">
                 privacy&nbsp;policy
-              </a>
+              </Link>
               .
             </Switch.Label>
           </Switch.Group>

@@ -1,4 +1,5 @@
 import { FiFacebook, FiInstagram, FiYoutube, FiTwitter } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -6,12 +7,12 @@ export default function Footer() {
       <div className="mx-16 px-8 rounded-xl bg-neutral-900 py-8 mb-12">
         <div className="flex gap-24 justify-between">
           <div className="max-w-md">
-            <a
-              href={"/"}
+            <Link
+              to={"/"}
               className="font-bold text-xl text-transparent bg-clip-text  bg-gradient-to-l from-emerald-700 to-green-500"
             >
               Spotify
-            </a>
+            </Link>
             <p className="mt-2 ">
               Escape into your own world of music with our curated playlists and
               personalized recommendations.
@@ -41,9 +42,9 @@ export default function Footer() {
                 <h3 className="font-semibold text-lg">{title}</h3>
                 <ul className="flex flex-col gap-2 mt-3">
                   {links.map((link, i) => (
-                    <a key={i} href="#">
+                    <Link key={i} href="#">
                       <li className="text-neutral-400 font-medium">{link}</li>
-                    </a>
+                    </Link>
                   ))}
                 </ul>
               </div>

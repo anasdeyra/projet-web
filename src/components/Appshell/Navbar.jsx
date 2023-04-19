@@ -1,8 +1,6 @@
+import { Link, useLocation } from "react-router-dom";
+
 const LINKS = [
-  {
-    href: "/",
-    label: "Home",
-  },
   {
     href: "/services",
     label: "Services",
@@ -22,9 +20,9 @@ export default function Navbar() {
   return (
     <header className=" border-b border-b-neutral-700 px-16 py-6 z-50">
       <div className="flex justify-between items-center max-w-[1366px] mx-auto">
-        <a href={"/"} className="font-bold text-2xl ">
+        <Link to={"/"} className="font-bold text-2xl ">
           Spotify
-        </a>
+        </Link>
         <div className="flex gap-16 items-center">
           <ul className="flex gap-8">
             {LINKS.map((props, i) => (
@@ -41,15 +39,16 @@ export default function Navbar() {
 }
 
 function Navlink({ href, label }) {
-  const isBold = window.location.pathname === href;
+  const { pathname } = useLocation();
+  const isBold = pathname === href;
   return (
-    <a
+    <Link
       className={` ${
         isBold ? "font-medium" : "text-neutral-100 hover:text-emerald-500"
       }`}
-      href={href}
+      to={href}
     >
       <li>{label}</li>
-    </a>
+    </Link>
   );
 }
