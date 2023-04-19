@@ -5,9 +5,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export const Blog = () => {
-  useEffect(() => {
-    document.title = "Blog";
-  }, []);
   return (
     <div className="mt-24 text-center">
       <h1 className="text-5xl font-bold">Tune In: Spotify Blog</h1>
