@@ -2,13 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Index from "./pages/index";
 import "./index.css";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  BrowserRouter,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Appshell from "./components/Appshell/Appshell";
 import Services from "./pages/services";
 import { Blog } from "./pages/Blog";
@@ -43,6 +37,9 @@ const ROUTES = [
     path: "/contact-us",
     element: <ContactUs />,
   },
+];
+
+const APP_ROUTES = [
   {
     path: "/app",
     element: <App />,
@@ -53,16 +50,31 @@ const ROUTES = [
   },
 ];
 
+function Spotify() {
+  const { pathname } = useLocation();
+  if (pathname.startsWith("/app"))
+    return (
+      <Routes>
+        {APP_ROUTES.map((props, i) => (
+          <Route {...props} key={i} />
+        ))}
+      </Routes>
+    );
+  return (
+    <Appshell>
+      <Routes>
+        {ROUTES.map((props, i) => (
+          <Route {...props} key={i} />
+        ))}
+      </Routes>
+    </Appshell>
+  );
+}
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Appshell>
-        <Routes>
-          {ROUTES.map((props, i) => (
-            <Route {...props} key={i} />
-          ))}
-        </Routes>
-      </Appshell>
+      <Spotify />
     </BrowserRouter>
   </React.StrictMode>
 );
