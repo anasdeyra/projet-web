@@ -5,9 +5,6 @@ import Profile from "./Profile";
 import { GoSearch } from "react-icons/go";
 const AppLayout = ({ children }) => {
   const [search, setSearch] = useState("");
-  useEffect(() => {
-    document.title = "Search";
-  }, []);
   return (
     <div className="flex ">
       <div className="flex-1">
