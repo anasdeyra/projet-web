@@ -4,6 +4,7 @@ import { MdAddCircle as PlusIcon } from "react-icons/md";
 import { BiLibrary } from "react-icons/bi";
 import { IoMdClose, IoIosAdd } from "react-icons/io";
 import { AiOutlineDelete } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const [showModal, setShowModal] = useState(false);
@@ -24,9 +25,12 @@ const Sidebar = () => {
 
   return (
     <>
-      <h1 className=" text-3xl mt-4 font-bold text-transparent bg-clip-text  bg-gradient-to-l from-emerald-700 to-green-500">
+      <Link
+        to={"/"}
+        className=" text-3xl mt-4 font-bold text-transparent bg-clip-text  bg-gradient-to-l from-emerald-700 to-green-500"
+      >
         Spotify
-      </h1>
+      </Link>
       <ul className=" list-none mt-12  flex  flex-col gap-y-2">
         <li className="flex gap-x-2 items-center cursor-pointer">
           {" "}
@@ -88,7 +92,7 @@ const Sidebar = () => {
       </ul>
       {showModal ? (
         <>
-          <div className="flex justify-center top-0 items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-[2000] backdrop-blur-sm      ">
+          <div className="flex bg-neutral-900 bg-opacity-50 justify-center top-0 items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-[2000] backdrop-blur-md      ">
             <div className="relative w-auto my-6 mx-auto max-w-3xl">
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-neutral-800 h-[15rem] ">
                 <div className="flex items-center  justify-between p-5 border-b border-solid  w-[30rem] ">

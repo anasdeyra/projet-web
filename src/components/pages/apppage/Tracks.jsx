@@ -25,7 +25,9 @@ const Tracks = ({ title, playlists }) => {
                 className="h-full  aspect-square object-cover rounded-l-lg"
                 src={image}
               />
-              <span className="grow text-white font-medium">{name}</span>
+              <span className="grow text-white font-medium capitalize">
+                {name}
+              </span>
               <PlayIcon
                 id="play"
                 title="play"
