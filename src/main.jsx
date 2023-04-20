@@ -11,6 +11,7 @@ import ContactUs from "./pages/ContactUs";
 import BlogPage from "./components/pages/BlogPage";
 import App from "./pages/App";
 import Search from "./pages/Search";
+import Library from "./components/pages/apppage/Library";
 
 const ROUTES = [
   {
@@ -48,6 +49,10 @@ const APP_ROUTES = [
     path: "/app/search",
     element: <Search />,
   },
+  {
+    path : "/app/library",
+    element : <Library/>
+  }
 ];
 
 function Spotify() {

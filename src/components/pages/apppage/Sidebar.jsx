@@ -3,7 +3,7 @@ import { FiHome, FiHeart, FiSearch } from "react-icons/fi";
 import { MdAddCircle as PlusIcon } from "react-icons/md";
 import { BiLibrary } from "react-icons/bi";
 import { IoMdClose, IoIosAdd } from "react-icons/io";
-import { AiOutlineDelete } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const [showModal, setShowModal] = useState(false);
@@ -24,17 +24,21 @@ const Sidebar = () => {
 
   return (
     <>
-      <h1 className=" text-3xl mt-4 font-bold text-transparent bg-clip-text  bg-gradient-to-l from-emerald-700 to-green-500">
+     <Link to='/app'><h1 className=" text-3xl mt-4 font-bold text-transparent bg-clip-text  bg-gradient-to-l from-emerald-700 to-green-500">
         Spotify
       </h1>
+     </Link> 
       <ul className=" list-none mt-12  flex  flex-col gap-y-2">
-        <li className="flex gap-x-2 items-center cursor-pointer">
+        <Link to='/app'> <li className="flex gap-x-2 items-center cursor-pointer">
           {" "}
           <span className="p-1">
             <FiHome size={20} />
           </span>
           Home
         </li>
+        </Link>
+       
+        <Link to='/app/search'> 
         <li className="flex gap-x-2 items-center cursor-pointer  ">
           {" "}
           <span className="p-1">
@@ -42,13 +46,17 @@ const Sidebar = () => {
           </span>
           Search
         </li>
-        <li className="flex gap-x-2 items-center cursor-pointer">
+        </Link>
+       <Link to="/app/library">
+       <li className="flex gap-x-2 items-center cursor-pointer">
           {" "}
           <span className="p-1">
             <BiLibrary size={20} />
           </span>
           Library
         </li>
+       </Link>
+       
       </ul>
       <ul className="mt-8 flex flex-col gap-y-2">
         <li

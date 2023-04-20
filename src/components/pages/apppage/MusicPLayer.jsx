@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { CiPlay1, CiPause1, CiVolumeHigh, CiVolumeMute } from "react-icons/ci";
+import { CiPlay1, CiPause1 } from "react-icons/ci";
 import { BsSkipBackward, BsSkipForward } from "react-icons/bs";
-import { MdVolumeDownAlt, MdVolumeUp, MdVolumeOff } from "react-icons/md";
+import { MdVolumeUp, MdVolumeOff } from "react-icons/md";
 const MusicPLayer = () => {
   const [play, setPlay] = useState(false);
   const [shuffle, setShuffle] = useState(false);
