@@ -5,9 +5,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export const Blog = () => {
-  useEffect(() => {
-    document.title = "Blog";
-  }, []);
   return (
     <div className="mt-24 text-center">
       <h1 className="text-5xl font-bold">Tune In: Spotify Blog</h1>
@@ -48,11 +45,8 @@ const Article = ({
       <Link className="hover:text-emerald-500" to={`/blog/${slug}`}>
         <h2 className="text-lg mt-4 px-4 font-bold">{title.toUpperCase()}</h2>
       </Link>
-      <h6 className=" text-xs px-4 text-gray-300 font-normal">{date}</h6>
+      <h6 className=" text-xs px-4 text-gray-300 font-normal mb-6">{date}</h6>
 
-      <h5 className=" text-md tracking-normal font-light text-gray-300 mb-6 px-4 mt-3">
-        {article.substring(0, 100)}...
-      </h5>
       <div className="flex text-sm px-4 my-4 mt-auto justify-between items-center">
         <div className="flex items-center gap-x-2">
           <img

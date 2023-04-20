@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 import { Link, useLocation } from "react-router-dom";
 
 const LINKS = [
@@ -19,20 +17,8 @@ const LINKS = [
 ];
 
 export default function Navbar() {
-  useEffect(() => {
-    let nav = document.getElementById("navbar");
-    if (window.location.pathname.startsWith("/app")) {
-      nav.classList.add("hidden");
-    } else {
-      nav.classList.remove("hidden");
-    }
-  }, []);
-
   return (
-    <header
-      id="navbar"
-      className=" border-b border-b-neutral-700 px-16 py-6 z-50 "
-    >
+    <header className=" border-b border-b-neutral-700 px-16 py-6 z-50">
       <div className="flex justify-between items-center max-w-[1366px] mx-auto">
         <Link to={"/"} className="font-bold text-2xl ">
           Spotify
@@ -43,9 +29,12 @@ export default function Navbar() {
               <Navlink {...props} key={i} />
             ))}
           </ul>
-          <button className="bg-gradient-to-bl from-emerald-700 to-green-500 text-sm px-5 py-2 rounded-md transition-all active:scale-[0.98]">
+          <Link
+            to={"/sign-in"}
+            className="bg-gradient-to-bl from-emerald-700 to-green-500 text-sm px-5 py-2 rounded-md transition-all active:scale-[0.98]"
+          >
             Sign in
-          </button>
+          </Link>
         </div>
       </div>
     </header>
