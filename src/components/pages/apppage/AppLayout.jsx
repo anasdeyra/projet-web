@@ -12,7 +12,7 @@ const AppLayout = ({ children }) => {
           style={{
             height: "calc(100vh - 99px)",
           }}
-          className="flex-1  top-0 w-[220px] bg-neutral-900 p-4 z-[3000] fixed "
+          className="flex flex-col  top-0 w-[220px] bg-neutral-900 p-4 z-[3000] fixed overflow-hidden"
         >
           <Sidebar />
         </div>

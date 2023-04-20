@@ -5,9 +5,7 @@ import {
   FiUser,
   FiSettings,
   FiLogOut,
-  FiEdit,
-  FiEdit2,
-  FiEdit3,
+  FiLock,
   FiCreditCard,
 } from "react-icons/fi";
 
@@ -56,7 +54,7 @@ const Profile = () => {
                     "flex gap-2 items-center px-4 py-2 text-sm "
                   )}
                 >
-                  <FiUser />
+                  <FiLock />
                   <p>Account</p>
                 </a>
               )}
@@ -70,7 +68,7 @@ const Profile = () => {
                     "flex gap-2 items-center px-4 py-2 text-sm"
                   )}
                 >
-                  <FiEdit />
+                  <FiUser />
                   <p>Profile</p>
                 </a>
               )}

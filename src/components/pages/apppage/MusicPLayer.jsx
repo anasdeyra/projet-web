@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import {
   FiRepeat,
   FiShuffle,
@@ -8,16 +8,9 @@ import {
   FiVolumeX,
   FiSkipBack,
   FiSkipForward,
-  FiPlayCircle,
-  FiPauseCircle,
   FiHeart,
 } from "react-icons/fi";
-import {
-  MdVolumeUp,
-  MdVolumeOff,
-  MdPlayCircleFilled,
-  MdPauseCircleFilled,
-} from "react-icons/md";
+import { MdPlayCircleFilled, MdPauseCircleFilled } from "react-icons/md";
 
 function formatTime(seconds) {
   let minutes = Math.floor(seconds / 60);
@@ -64,7 +57,7 @@ const MusicPLayer = () => {
             }}
             size={19}
             className={`cursor-pointer active:scale-95 ${
-              isLiked ? "fill-white" : ""
+              isLiked ? "fill-emerald-600 text-emerald-600" : ""
             }`}
           />
         </div>

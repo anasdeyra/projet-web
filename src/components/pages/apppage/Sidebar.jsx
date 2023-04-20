@@ -9,7 +9,13 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
   const [showModal, setShowModal] = useState(false);
   const [name, setName] = useState("");
-  const [lists, setPlaylist] = useState(["Hello", "Addelle"]);
+  const [lists, setPlaylist] = useState([
+    "Beast Mode",
+    "ESL CS:GO Playlist",
+    "This Is Pop Smoke",
+    "Rap Caviar",
+    "Lyfë",
+  ]);
   const handleCreate = () => {
     setPlaylist((e) => [...e, name]);
     setShowModal(false);
@@ -76,9 +82,8 @@ const Sidebar = () => {
           Liked songs
         </li>
       </ul>
-
-      <ul className="flex flex-col gap-y-2 border-t pt-4 border-t-neutral-700 mt-8">
-        <h3 className="font-semibold text-lg mb-2">My Playlists</h3>
+      <hr className="mt-8 mb-4 border-neutral-700" />
+      <ul className="flex my-playlists flex-col gap-y-2 overflow-y-scroll h-full">
         {lists.map((list, i) => {
           return (
             <li

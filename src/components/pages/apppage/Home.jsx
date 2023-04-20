@@ -21,6 +21,10 @@ const PLAYLISTS1 = [
   { name: "Lyfë", image: "/playlists/out the way.jpg" },
 ];
 const PLAYLISTS2 = [
+  {
+    name: "tourner dans le vide",
+    image: "/playlists/tourner dans le vide.jpg",
+  },
   { name: "as it was", image: "/playlists/as it was.jpg" },
   { name: "Eyes Closed", image: "/playlists/eyes.png" },
   { name: "bad habits", image: "/playlists/bad habits.jpg" },
