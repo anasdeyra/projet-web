@@ -1,0 +1,14 @@
+.track:hover > img {
+  @apply scale-110 transition-all rounded-lg;
+}
+
+.track:hover > #play {
+  @apply scale-100 transition-all active:scale-95;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  border-radius: 50%;
+  @apply bg-gradient-to-tr from-emerald-700 to-green-500 w-3 aspect-square;
+}
