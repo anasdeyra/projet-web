@@ -11,6 +11,8 @@ import ContactUs from "./pages/ContactUs";
 import BlogPage from "./components/pages/BlogPage";
 import App from "./pages/App";
 import Search from "./pages/Search";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 import Library from "./components/pages/apppage/Library";
 
 const ROUTES = [
@@ -37,6 +39,14 @@ const ROUTES = [
   {
     path: "/contact-us",
     element: <ContactUs />,
+  },
+  {
+    path: "/sign-in",
+    element: <SignIn />,
+  },
+  {
+    path: "/sign-up",
+    element: <SignUp />,
   },
 ];
 

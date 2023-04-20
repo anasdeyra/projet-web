@@ -5,10 +5,17 @@ import { BiLibrary } from "react-icons/bi";
 import { IoMdClose, IoIosAdd } from "react-icons/io";
 import { Link } from "react-router-dom";
 
+
 const Sidebar = () => {
   const [showModal, setShowModal] = useState(false);
   const [name, setName] = useState("");
-  const [lists, setPlaylist] = useState(["Hello", "Addelle"]);
+  const [lists, setPlaylist] = useState([
+    "Beast Mode",
+    "ESL CS:GO Playlist",
+    "This Is Pop Smoke",
+    "Rap Caviar",
+    "Lyfë",
+  ]);
   const handleCreate = () => {
     setPlaylist((e) => [...e, name]);
     setShowModal(false);
@@ -24,10 +31,10 @@ const Sidebar = () => {
 
   return (
     <>
-     <Link to='/app'><h1 className=" text-3xl mt-4 font-bold text-transparent bg-clip-text  bg-gradient-to-l from-emerald-700 to-green-500">
+
+      <Link to={"/app"} className=" text-3xl mt-4 font-bold text-transparent bg-clip-text  bg-gradient-to-l from-emerald-700 to-green-500">
         Spotify
-      </h1>
-     </Link> 
+      </Link>
       <ul className=" list-none mt-12  flex  flex-col gap-y-2">
         <Link to='/app'> <li className="flex gap-x-2 items-center cursor-pointer">
           {" "}
@@ -80,9 +87,8 @@ const Sidebar = () => {
           Liked songs
         </li>
       </ul>
-
-      <ul className="flex flex-col gap-y-2 border-t pt-4 border-t-neutral-700 mt-8">
-        <h3 className="font-semibold text-lg mb-2">My Playlists</h3>
+      <hr className="mt-8 mb-4 border-neutral-700" />
+      <ul className="flex my-playlists flex-col gap-y-2 overflow-y-scroll h-full">
         {lists.map((list, i) => {
           return (
             <li
@@ -96,7 +102,7 @@ const Sidebar = () => {
       </ul>
       {showModal ? (
         <>
-          <div className="flex justify-center top-0 items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-[2000] backdrop-blur-sm      ">
+          <div className="flex bg-neutral-900 bg-opacity-50 justify-center top-0 items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-[2000] backdrop-blur-md      ">
             <div className="relative w-auto my-6 mx-auto max-w-3xl">
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-neutral-800 h-[15rem] ">
                 <div className="flex items-center  justify-between p-5 border-b border-solid  w-[30rem] ">

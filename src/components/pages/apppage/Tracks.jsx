@@ -37,7 +37,9 @@ const Tracks = (props) => {
                 className="h-full  aspect-square object-cover rounded-l-lg"
                 src={img}
               />
-              <span className="grow text-white font-medium">{e.title}</span>
+              <span className="grow text-white font-medium capitalize">
+                {e.title}
+              </span>
               <PlayIcon
                 id="play"
                 title="play"
