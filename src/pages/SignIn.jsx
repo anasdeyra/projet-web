@@ -1,7 +1,26 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 export default function SignIn() {
+  const [values , setValues] = useState({password : "" , username : ""})
+  const [error , setError] = useState("")
+  const  naviagte = useNavigate()
+  const handlesubmit = async (e)=>{
+    e.preventDefault()
+    try{  
+        
+         const res = await axios.post('http://localhost:5000/api/login',values)
+         console.log(res)
+          if(res.data.message==="success"){
+              window.sessionStorage.setItem('auth',JSON.stringify(res.data))
+              naviagte('/app')
+          }
+    }catch(e){
+        console.log(e.message)
+    }
+  }
+  console.log(values)
   return (
     <div className="isolate px-6 my-24 lg:px-8">
       <div
@@ -21,9 +40,7 @@ export default function SignIn() {
         <p className="mt-2 text-lg leading-8 text-gray-200">Welcome back!</p>
       </div>
       <form
-        onSubmit={(e) => {
-          e.preventDefault();
-        }}
+        onSubmit={handlesubmit}
         className="mx-auto mt-16 max-w-xl sm:mt-20"
       >
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
@@ -32,14 +49,17 @@ export default function SignIn() {
               htmlFor="email"
               className="block text-sm font-medium leading-6 text-neutral-100"
             >
-              Email
+              Username
             </label>
             <div className="mt-2.5">
               <input
-                type="email"
-                name="email"
-                id="email"
-                autoComplete="email"
+              onChange={(e)=>{
+                setValues({...values, username: e.currentTarget.value})
+              }}
+                type="text"
+                name="username"
+                id="username"
+                autoComplete="username"
                 className="bg-neutral-900 block w-full rounded-md border-0 px-3.5 py-2 text-neutral-100 shadow-sm ring-1 ring-inset ring-neutral-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm sm:leading-6"
               />
             </div>
@@ -53,6 +73,9 @@ export default function SignIn() {
             </label>
             <div className="mt-2.5">
               <input
+               onChange={(e)=>{
+                setValues({...values, password: e.currentTarget.value})
+              }}
                 type="password"
                 name="password"
                 id="password"

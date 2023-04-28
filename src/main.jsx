@@ -14,6 +14,8 @@ import Search from "./pages/Search";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Library from "./components/pages/apppage/Library";
+import { MusicProvider } from "./contexts/MusicProvider";
+import Liked from "./components/pages/apppage/Liked";
 
 const ROUTES = [
   {
@@ -61,7 +63,10 @@ const APP_ROUTES = [
   },
   {
     path : "/app/library",
-    element : <Library/>
+    element : <Library/> 
+  },{
+    path : "/app/liked",
+    element : <Liked/>
   }
 ];
 
@@ -89,7 +94,10 @@ function Spotify() {
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Spotify />
+    <MusicProvider>
+    <Spotify />
+    </MusicProvider>
+     
     </BrowserRouter>
   </React.StrictMode>
 );

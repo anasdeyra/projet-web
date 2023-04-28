@@ -4,6 +4,7 @@ import { MdAddCircle as PlusIcon } from "react-icons/md";
 import { BiLibrary } from "react-icons/bi";
 import { IoMdClose, IoIosAdd } from "react-icons/io";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 
 const Sidebar = () => {
@@ -16,10 +17,7 @@ const Sidebar = () => {
     "Rap Caviar",
     "Lyfë",
   ]);
-  const handleCreate = () => {
-    setPlaylist((e) => [...e, name]);
-    setShowModal(false);
-  };
+
 
   useEffect(() => {
     if (showModal) {
@@ -28,7 +26,36 @@ const Sidebar = () => {
       document.body.style.overflow = "auto";
     }
   }, [showModal]);
-
+  const user = JSON.parse(window.sessionStorage.getItem('auth')) 
+  const handleCreateplay = async ()=>{
+    try {
+      
+          const res = await axios.post("http://localhost:5000/api/user/createplaylist",{
+            username : user.username,
+            name: name
+          })
+          setPlaylist((e) => [...e, name]);
+          setShowModal(false);
+          console.log(res.data)
+    } catch (e) {
+      console.log(e.message)
+    }
+  }
+  async function getdata(){
+    try {
+             const res = await axios.post('http://localhost:5000/api/user/getplaylists',{
+               username : user.username
+             })
+             setPlaylist([...lists,...res.data])
+             console.log(res.data)
+           } catch (e) {
+              console.log(e.message)
+           }
+    }      
+useEffect(()=>{
+ getdata()
+ 
+},[])
   return (
     <>
 
@@ -79,6 +106,7 @@ const Sidebar = () => {
           </span>
           Create Playlist
         </li>
+        <Link to={"/app/liked"}>
         <li className="flex gap-x-2 items-center cursor-pointer  ">
           {" "}
           <span className="p-1 bg-gradient-to-tr from-emerald-700 to-green-500 rounded-sm">
@@ -86,6 +114,8 @@ const Sidebar = () => {
           </span>
           Liked songs
         </li>
+        </Link>
+      
       </ul>
       <hr className="mt-8 mb-4 border-neutral-700" />
       <ul className="flex my-playlists flex-col gap-y-2 overflow-y-scroll h-full">
@@ -138,7 +168,7 @@ const Sidebar = () => {
                     />
                   </div>
                   <button
-                    onClick={handleCreate}
+                    onClick={handleCreateplay}
                     className="  mr-5 flex h-10 gap-x-1 items-center self-end font-medium bg-gradient-to-bl hover:bg-green-500 from-emerald-700 to-green-500 pr-5 pl-4 py-2 rounded-md transition-all active:scale-[0.98]"
                   >
                     <span>

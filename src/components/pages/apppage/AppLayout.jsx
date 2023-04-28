@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import MusicPLayer from "./MusicPLayer";
@@ -11,6 +11,12 @@ const AppLayout = ({ children }) => {
               navigate(`/app/search?q=${search}`)
     } 
     console.log(search)
+    useEffect(()=>{
+      const user = window.sessionStorage.getItem('auth')
+      if(!user){
+        window.location.assign('/')
+      }
+    },[])
   return (
     <div className="flex ">
       <div className="flex-1">
@@ -43,5 +49,4 @@ const AppLayout = ({ children }) => {
     </div>
   );
 };
-
 export default AppLayout;

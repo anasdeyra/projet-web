@@ -31,7 +31,7 @@ const TEAM = [
   },
   {
     name: "Leith Ben Hassen",
-    pic: "/team/leith.png",
+    pic: "/team/leith.jpg",
   },
   {
     name: "Mehdi Bhk",
