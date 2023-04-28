@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState , useContext, useEffect } from "react";
 import {
   FiRepeat,
   FiShuffle,
@@ -11,7 +11,8 @@ import {
   FiHeart,
 } from "react-icons/fi";
 import { MdPlayCircleFilled, MdPauseCircleFilled } from "react-icons/md";
-
+import { MusicContext } from "../../../contexts/MusicProvider";
+import axios from "axios";
 function formatTime(seconds) {
   let minutes = Math.floor(seconds / 60);
   let remainingSeconds = seconds % 60;
@@ -19,14 +20,14 @@ function formatTime(seconds) {
     .toString()
     .padStart(2, "0")}`;
 }
-
 const MusicPLayer = () => {
+  const { songDetails } = useContext(MusicContext);
   const [play, setPlay] = useState(false);
   const [shuffle, setShuffle] = useState(false);
   const [repeat, setRepeat] = useState(false);
   const [volume, setVolume] = useState(50);
   const [isLiked, setIsLiked] = useState(false);
-  const [playProgress, setPlayProgress] = useState(50);
+  const [playProgress, setPlayProgress] = useState(30);
 
   const VolumeIcon = useMemo(() => {
     if (volume === 0) return FiVolumeX;
@@ -34,7 +35,45 @@ const MusicPLayer = () => {
     if (volume <= 75) return FiVolume1;
     if (volume <= 100) return FiVolume2;
   }, [volume]);
-
+useEffect(()=>{
+  let audio = document.getElementById('audio')
+        if(play===false){
+              audio.pause()
+              
+        }else{
+              audio.play()
+        }
+        audio.volume = volume/100
+          if(playProgress===30 && !repeat){
+            setPlay(false)
+          }
+          
+},[play, volume,playProgress])
+function handleTimeUpdate(event) {
+  
+  setPlayProgress(Math.floor(event.target.currentTime));
+}
+const handlelike= async()=>{
+    try {
+            if(isLiked){
+              const user = JSON.parse(window.sessionStorage.getItem('auth')) 
+              const res= await axios.post("http://localhost:5000/api/user/unlike", {
+                song_id : `${songDetails.id}`,
+                username : user.username
+              })
+              console.log(res)
+            }else{
+              const user = JSON.parse(window.sessionStorage.getItem('auth')) 
+              const res= await axios.post("http://localhost:5000/api/user/like", {
+                song_id : `${songDetails.id}`,
+                username : user.username
+              })
+              console.log(res)
+            }
+    } catch (e) {
+            console.log(e.message)
+    }
+}
   return (
     <div
       id="musicplayer"
@@ -43,16 +82,17 @@ const MusicPLayer = () => {
       <div className="flex gap-3 items-center w-56">
         <img
           className=" h-16 rounded-sm aspect-square object-cover shadow-lg shadow-neutral-950"
-          src="/playlists/out the way.jpg"
+          src={songDetails.cover!="" ? songDetails.cover: "https://e-cdns-images.dzcdn.net/images/playlist/d41d8cd98f00b204e9800998ecf8427e/250x250.jpg"}
         />
         <div>
           {" "}
-          <h3 className="font-semibold text-sm">Out Thë Way</h3>
-          <h4 className="text-xs text-neutral-400 mt-1">Yeat</h4>
+          <h3 className="font-semibold text-sm">{songDetails.title}</h3>
+          <h4 className="text-xs text-neutral-400 mt-1">{songDetails.artist}</h4>
         </div>
         <div className="ml-4">
           <FiHeart
             onClick={() => {
+              handlelike()
               setIsLiked((b) => !b);
             }}
             size={19}
@@ -85,7 +125,13 @@ const MusicPLayer = () => {
           </li>
           <li
             onClick={() => {
-              setPlay(!play);
+              if(play===false&&playProgress===30){
+                audio.currentTime = 0
+              setPlay(true)
+              }else{
+                setPlay(!play);
+              }
+             
             }}
           >
             {play ? (
@@ -121,24 +167,27 @@ const MusicPLayer = () => {
           <input
             type="range"
             min={0}
-            max={157}
+            max={30}
             value={playProgress}
             onChange={(e) => {
-              setPlayProgress(Number(e.currentTarget.value));
+              
+              audio.currentTime = e.target.value;
+              
             }}
             className="player accent-emerald-500 w-[30rem] transparent h-1 cursor-pointer appearance-none rounded-full border-transparent bg-neutral-700"
           />
-          <span className="text-xs w-10 text-start text-neutral-400">
-            02:37
-          </span>
+         <span className="text-xs w-10 text-end text-neutral-400">
+              {formatTime(30)}
+         </span>
         </span>
+        <audio loop={repeat} volume={volume} onTimeUpdate={handleTimeUpdate} className="hidden" id="audio"  src={songDetails.audioSrc}/>
       </div>
 
       <span className="flex items-center gap-x-3 w-52 justify-end">
         <span
           onClick={() => {
             if (volume === 0) {
-              setVolume(50);
+              setVolume(0.5);
             } else {
               setVolume(0);
             }

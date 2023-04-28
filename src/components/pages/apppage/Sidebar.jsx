@@ -3,8 +3,9 @@ import { FiHome, FiHeart, FiSearch } from "react-icons/fi";
 import { MdAddCircle as PlusIcon } from "react-icons/md";
 import { BiLibrary } from "react-icons/bi";
 import { IoMdClose, IoIosAdd } from "react-icons/io";
-import { AiOutlineDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
 
 const Sidebar = () => {
   const [showModal, setShowModal] = useState(false);
@@ -16,10 +17,7 @@ const Sidebar = () => {
     "Rap Caviar",
     "Lyfë",
   ]);
-  const handleCreate = () => {
-    setPlaylist((e) => [...e, name]);
-    setShowModal(false);
-  };
+
 
   useEffect(() => {
     if (showModal) {
@@ -28,23 +26,53 @@ const Sidebar = () => {
       document.body.style.overflow = "auto";
     }
   }, [showModal]);
-
+  const user = JSON.parse(window.sessionStorage.getItem('auth')) 
+  const handleCreateplay = async ()=>{
+    try {
+      
+          const res = await axios.post("http://localhost:5000/api/user/createplaylist",{
+            username : user.username,
+            name: name
+          })
+          setPlaylist((e) => [...e, name]);
+          setShowModal(false);
+          console.log(res.data)
+    } catch (e) {
+      console.log(e.message)
+    }
+  }
+  async function getdata(){
+    try {
+             const res = await axios.post('http://localhost:5000/api/user/getplaylists',{
+               username : user.username
+             })
+             setPlaylist([...lists,...res.data])
+             console.log(res.data)
+           } catch (e) {
+              console.log(e.message)
+           }
+    }      
+useEffect(()=>{
+ getdata()
+ 
+},[])
   return (
     <>
-      <Link
-        to={"/"}
-        className=" text-3xl mt-4 font-bold text-transparent bg-clip-text  bg-gradient-to-l from-emerald-700 to-green-500"
-      >
+
+      <Link to={"/app"} className=" text-3xl mt-4 font-bold text-transparent bg-clip-text  bg-gradient-to-l from-emerald-700 to-green-500">
         Spotify
       </Link>
       <ul className=" list-none mt-12  flex  flex-col gap-y-2">
-        <li className="flex gap-x-2 items-center cursor-pointer">
+        <Link to='/app'> <li className="flex gap-x-2 items-center cursor-pointer">
           {" "}
           <span className="p-1">
             <FiHome size={20} />
           </span>
           Home
         </li>
+        </Link>
+       
+        <Link to='/app/search'> 
         <li className="flex gap-x-2 items-center cursor-pointer  ">
           {" "}
           <span className="p-1">
@@ -52,13 +80,17 @@ const Sidebar = () => {
           </span>
           Search
         </li>
-        <li className="flex gap-x-2 items-center cursor-pointer">
+        </Link>
+       <Link to="/app/library">
+       <li className="flex gap-x-2 items-center cursor-pointer">
           {" "}
           <span className="p-1">
             <BiLibrary size={20} />
           </span>
           Library
         </li>
+       </Link>
+       
       </ul>
       <ul className="mt-8 flex flex-col gap-y-2">
         <li
@@ -74,6 +106,7 @@ const Sidebar = () => {
           </span>
           Create Playlist
         </li>
+        <Link to={"/app/liked"}>
         <li className="flex gap-x-2 items-center cursor-pointer  ">
           {" "}
           <span className="p-1 bg-gradient-to-tr from-emerald-700 to-green-500 rounded-sm">
@@ -81,6 +114,8 @@ const Sidebar = () => {
           </span>
           Liked songs
         </li>
+        </Link>
+      
       </ul>
       <hr className="mt-8 mb-4 border-neutral-700" />
       <ul className="flex my-playlists flex-col gap-y-2 overflow-y-scroll h-full">
@@ -133,7 +168,7 @@ const Sidebar = () => {
                     />
                   </div>
                   <button
-                    onClick={handleCreate}
+                    onClick={handleCreateplay}
                     className="  mr-5 flex h-10 gap-x-1 items-center self-end font-medium bg-gradient-to-bl hover:bg-green-500 from-emerald-700 to-green-500 pr-5 pl-4 py-2 rounded-md transition-all active:scale-[0.98]"
                   >
                     <span>

@@ -12,8 +12,8 @@ function findBlogBySlug(slug) {
 }
 
 export default function BlogPage() {
-  const params = useParams();
-  const blog = findBlogBySlug(params.slug);
+  const {slug} = useParams();
+  const blog = findBlogBySlug(slug);
   const navigate = useNavigate();
 
   useEffect(() => {

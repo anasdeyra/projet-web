@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import {
   FiChevronDown,
@@ -8,8 +8,23 @@ import {
   FiLock,
   FiCreditCard,
 } from "react-icons/fi";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
+  const [username , setUsername] = useState("")
+  const [isPrem , setIsPrem] = useState(false)
+  const navigate = useNavigate()
+  useEffect(()=>{
+  
+        const user = JSON.parse(window.sessionStorage.getItem('auth')) 
+        setUsername(user.username)
+        setIsPrem(user.isPrem)
+  },[])
+  const handlelogout = async()=>{
+      window.sessionStorage.clear()
+      navigate('/')
+  }
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
@@ -23,7 +38,7 @@ const Profile = () => {
             className="rounded-full object-cover aspect-square w-10"
           />
           <span className="text-sm font-semibold text-white ml-1">
-            Anas Deyra
+          {username}
           </span>
 
           <FiChevronDown
@@ -73,7 +88,7 @@ const Profile = () => {
                 </a>
               )}
             </Menu.Item>
-            <Menu.Item>
+           {!isPrem &&  <Menu.Item>
               {({ active }) => (
                 <a
                   href="#"
@@ -86,7 +101,7 @@ const Profile = () => {
                   Go <p>Premium</p>
                 </a>
               )}
-            </Menu.Item>
+            </Menu.Item>}
             <Menu.Item>
               {({ active }) => (
                 <a
@@ -103,18 +118,19 @@ const Profile = () => {
             </Menu.Item>
           </div>
 
-          <Menu.Item>
+          <Menu.Item >
             {({ active }) => (
-              <a
-                href="#"
+              <div 
+                
+                onClick={handlelogout}
                 className={classNames(
-                  active ? "bg-neutral-800" : "",
-                  "flex gap-2 items-center px-4 py-2 text-sm "
+                  active ? "bg-neutral-800 cursor-pointer" : "",
+                  "flex gap-2 items-center px-4 py-2 text-sm cursor-pointer "
                 )}
               >
                 <FiLogOut />
                 <p>Logout</p>
-              </a>
+              </div>
             )}
           </Menu.Item>
         </Menu.Items>
