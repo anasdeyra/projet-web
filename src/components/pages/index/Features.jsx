@@ -25,9 +25,9 @@ export default function Features() {
 
 function FeaturesCard({ feature, description, Icon }) {
   return (
-    <div className="flex rounded-lg overflow-hidden">
+    <div className="flex rounded-lg overflow-hidden cursor-pointer">
       <span className="w-full max-w-[4px] bg-gradient-to-b from-emerald-700 to-green-500" />
-      <div className="flex flex-col items-start bg-neutral-900 p-4 ">
+      <div className="flex flex-col items-start bg-neutral-900 transition-colors hover:bg-neutral-800 p-4 ">
         <div className="bg-gradient-to-bl from-emerald-700 to-green-500 p-2 rounded-md">
           <Icon size={24} />
         </div>

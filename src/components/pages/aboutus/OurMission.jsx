@@ -45,8 +45,8 @@ const OurMission = () => {
         </div>
       </div>
       <img
-        className=" object-cover mt-20 rounded-2xl h-[512px] w-full"
-        src="/about-us-1.jpg"
+        className=" object-cover mt-20 rounded-xl h-[512px] w-full"
+        src="/about2.jpg"
       />
       <OurValues />
       <OurTeam />

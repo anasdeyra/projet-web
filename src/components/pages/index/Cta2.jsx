@@ -16,7 +16,7 @@ export default function Cta2() {
         Contact Us
       </Link>
       <img
-        src="/cta2.png"
+        src="/cta.png"
         alt="cta"
         className="absolute right-[25%] -top-10 w-28 transition-transform bounce "
       />

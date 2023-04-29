@@ -1,5 +1,4 @@
 import React from "react";
-import about1 from "../assets/about1.jpg";
 import OurMission from "../components/pages/aboutus/OurMission";
 const AboutUs = () => {
   return (
@@ -22,7 +21,7 @@ const AboutUs = () => {
           </h5>
         </div>
         <div className="flex-1 ">
-          <img className=" rounded-2xl" src={about1} />
+          <img className=" rounded-xl" src={"/about.jpg"} />
         </div>
       </div>
       <OurMission />

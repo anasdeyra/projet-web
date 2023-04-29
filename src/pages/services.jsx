@@ -8,6 +8,7 @@ export default function Services() {
         Treat yourself to the ultimate music listening experience with our
         premium plans at unbeatable prices.
       </h2>
+
       <div className="mt-16 grid lg:grid-cols-3 grid-cols-1 max-w-7xl mx-auto justify-between gap-8">
         {CARDS.map((props, i) => (
           <Card key={i} {...props} />

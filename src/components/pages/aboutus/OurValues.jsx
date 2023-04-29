@@ -14,7 +14,7 @@ const OurValues = () => {
           return (
             <div
               key={i}
-              className=" bg-neutral-900  rounded-lg flex overflow-hidden"
+              className=" bg-neutral-900 hover:bg-neutral-800 rounded-lg flex overflow-hidden cursor-pointer"
             >
               <span className="w-full max-w-[4px] bg-gradient-to-b from-emerald-700 to-green-500" />
 
@@ -60,7 +60,7 @@ const values = [
   {
     title: "Community",
     content:
-      "We believe in the power of music to bring people together. We are committed to building a vibrant community of music lovers and creators who share their passion for music with one another. We strive to create a platform that fosters connection, collaboration, and mutual support among our users and our team.",
+      "We believe in the power of music to bring people together. We are committed to building a vibrant community of music lovers and creators who share their passion for music with one another. We strive to create a platform that fosters connection, collaboration, and mutual support.",
   },
 ];
 export default OurValues;

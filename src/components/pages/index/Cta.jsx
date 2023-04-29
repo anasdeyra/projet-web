@@ -1,24 +1,27 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Cta() {
   return (
-    <div className="max-w-7xl mx-auto relative mt-40 p-10 rounded-xl bg-gradient-to-tr from-emerald-700 to-green-500 flex justify-between items-center">
-      <div>
-        <h2 className="font-bold text-3xl">
-          Start Your Spotify Subscription Today
-        </h2>
-        <h3 className="font-semibold text-xl mt-2">
-          Enjoy ad-free music streaming and more.
-        </h3>
-      </div>
-      <button className="bg-white text-neutral-800 rounded-lg px-4 py-3 font-semibold transition-all active:scale-[0.98]">
+    <div
+      style={{
+        backgroundImage: "url(/services.jpg)",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+      className="max-w-7xl mx-auto relative mt-40 px-10 py-48 rounded-xl bg-gradient-to-tr from-emerald-700 to-green-500 flex flex-col justify-between items-center"
+    >
+      <h2 className="font-bold text-5xl">
+        Start Your Spotify Subscription Today
+      </h2>
+      <h3 className="font-semibold text-3xl mt-2">
+        Enjoy ad-free music streaming and more.
+      </h3>
+      <Link
+        to="/services"
+        className="bg-white mt-8 text-neutral-800 rounded-lg px-4 py-3 font-semibold transition-all active:scale-[0.98]"
+      >
         Unlock the Music
-      </button>
-      <img
-        src="/cta.png"
-        alt="cta"
-        className="absolute right-[25%] -top-10 w-28 transition-transform bounce "
-      />
+      </Link>
     </div>
   );
 }

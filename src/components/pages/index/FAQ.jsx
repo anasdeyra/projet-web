@@ -8,34 +8,39 @@ export default function Faq() {
       <h2 className="font-medium text-2xl text-neutral-100 mt-2 max-w-5xl mx-auto">
         Find answers to commonly asked questions about Spotify.
       </h2>
-      <div className="text-start mt-24 flex flex-col max-w-2xl items-start">
-        {FAQ.map(({ question, answer }, i) => (
-          <Disclosure key={i}>
-            {({ open }) => (
-              <>
-                <Disclosure.Button className="py-8  text-2xl font-semibold w-full flex justify-between  border-t border-t-neutral-700">
-                  <span>{question}</span>{" "}
-                  <FiChevronUp
-                    size={24}
-                    className={`${!open ? "rotate-180 transform" : ""} `}
-                  />
-                </Disclosure.Button>
-                <Transition
-                  enter="transition duration-100 ease-out"
-                  enterFrom="transform scale-95 opacity-0"
-                  enterTo="transform scale-100 opacity-100"
-                  leave="transition duration-75 ease-out"
-                  leaveFrom="transform scale-100 opacity-100"
-                  leaveTo="transform scale-95 opacity-0"
-                >
-                  <Disclosure.Panel className="text-gray-100 pb-8 -mt-4 text-lg">
-                    {answer}
-                  </Disclosure.Panel>
-                </Transition>
-              </>
-            )}
-          </Disclosure>
-        ))}
+      <div className="flex gap-8 mt-24 items-center">
+        <div className="text-start flex flex-col max-w-2xl items-start shrink-0">
+          {FAQ.map(({ question, answer }, i) => (
+            <Disclosure key={i}>
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className="py-8  text-2xl font-semibold w-full flex justify-between  border-t border-t-neutral-700">
+                    <span>{question}</span>{" "}
+                    <FiChevronUp
+                      size={24}
+                      className={`${!open ? "rotate-180 transform" : ""} `}
+                    />
+                  </Disclosure.Button>
+                  <Transition
+                    enter="transition duration-100 ease-out"
+                    enterFrom="transform scale-95 opacity-0"
+                    enterTo="transform scale-100 opacity-100"
+                    leave="transition duration-75 ease-out"
+                    leaveFrom="transform scale-100 opacity-100"
+                    leaveTo="transform scale-95 opacity-0"
+                  >
+                    <Disclosure.Panel className="text-gray-100 pb-8 -mt-4 text-lg">
+                      {answer}
+                    </Disclosure.Panel>
+                  </Transition>
+                </>
+              )}
+            </Disclosure>
+          ))}
+        </div>
+        <div>
+          <img src="/faq.jpg" alt="faq" className="rounded-xl object-cover" />
+        </div>
       </div>
     </div>
   );
