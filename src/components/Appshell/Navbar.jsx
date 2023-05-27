@@ -30,7 +30,7 @@ export default function Navbar() {
             ))}
           </ul>
           <Link
-            to={"/sign-in"}
+            to={"/app"}
             className="bg-gradient-to-bl from-emerald-700 to-green-500 text-sm px-5 py-2 rounded-md transition-all active:scale-[0.98]"
           >
             Sign in
